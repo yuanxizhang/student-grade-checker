@@ -1,0 +1,30 @@
+name: Student Garde Checker CI pipeline
+
+# Trigger the workflow on push or pull request to the main branch
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Fetch the repository code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name : List project files
+         run : ls
+
+      - name : show the current directoty
+        run : pwd
+            
+      - name : Install dependencies
+        run : npm install
+
+      - name : Run Tests
+        run: npm test
+      
+
