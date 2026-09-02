@@ -28,4 +28,9 @@ test("Grade F", () => {
     assert.strictEqual(getGrade(0), "F");
 })
 
+test("Invalid marks", () => {
+    assert.strictEqual(getGrade(-1), "Invalid marks");
+    assert.strictEqual(getGrade(101), "Invalid marks");
+})
+
 console.log("All tests passed!");
