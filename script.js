@@ -1,5 +1,7 @@
 function getGrade(marks) {
-    if (marks >= 90) {
+    if (marks > 100) {
+        return "Invalid marks";
+    } else if (marks >= 90) {
         return "A";
     } else if (marks >= 80) {
         return "B";
@@ -7,8 +9,10 @@ function getGrade(marks) {
         return "C";
     } else if (marks >= 60) {
         return "D";
-    } else {
+    } else if (marks >= 0) {
         return "F";
+    } else {
+        return "Invalid marks";
     }
 }
 
