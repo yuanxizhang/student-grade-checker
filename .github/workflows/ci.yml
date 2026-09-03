@@ -45,8 +45,6 @@ jobs:
           echo "Workflow Name:    ${{ github.workflow }}"
           echo "Triggered By:     ${{ github.actor }}"
           echo "Current Branch:   ${{ github.ref_name }}"
-          echo "Commit SHA:       ${{ github.sha }}"
-          echo "Runner OS:        ${{ runner.os }}"
           echo "========================================="
       
 
