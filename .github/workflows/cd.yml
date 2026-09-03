@@ -1,4 +1,4 @@
-name: Student Grade Checker Continuous Delivery pipeline
+name: Student Grade Checker CD Pipeline
 
 on:
   push:

@@ -1,4 +1,4 @@
-name: Student Garde Checker CI pipeline
+name: Student Grade Checker CI Pipeline
 
 # Trigger the workflow on push or pull request to the main branch
 on:
