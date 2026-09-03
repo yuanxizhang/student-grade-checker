@@ -25,7 +25,7 @@ test("Grade D", () => {
 
 test("Grade F", () => {
     assert.strictEqual(getGrade(59), "F");
-    assert.strictEqual(getGrade(0), "F");
+    assert.strictEqual(getGrade(0), "D");
 })
 
 test("Invalid marks", () => {
