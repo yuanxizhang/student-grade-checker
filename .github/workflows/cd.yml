@@ -1,0 +1,41 @@
+name: Student Grade Checker Continuous Delivery pipeline
+
+on:
+  push:
+    branch:
+      - main 
+  workflow_dispatch:
+
+permission:
+  content: read
+  pages: write
+  id-token: write.   # Required if using OIDC (e.g., AWS, GCP, Azure OpenID Connect)
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    envoronment: 
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v6
+
+      - name: Setup Github Pages
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: '.'
+      
+      - name: Deploy to Github Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
+
+
+
+    
+
+
+
+
