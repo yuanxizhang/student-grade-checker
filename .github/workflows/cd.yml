@@ -6,7 +6,7 @@ on:
       - main 
   workflow_dispatch:
 
-permission:
+permissions:
   content: read
   pages: write
   id-token: write.   # Required if using OIDC (e.g., AWS, GCP, Azure OpenID Connect)
@@ -15,7 +15,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
-    envoronment: 
+    environment: 
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
 
