@@ -5,6 +5,10 @@ on:
   push:
     branches:
     - main
+  pull_request:
+    branches:
+    - main
+  workflow_dispatch: # Enables manual triggering
 
 jobs:
   test:
@@ -26,5 +30,23 @@ jobs:
 
       - name : Run Tests
         run: npm test
+  display-info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Display Project Information
+        run: |
+          echo "========================================="
+          echo "PROJECT INFORMATION"
+          echo "========================================="
+          echo "Repository Name:  ${{ github.repository }}"
+          echo "Workflow Name:    ${{ github.workflow }}"
+          echo "Triggered By:     ${{ github.actor }}"
+          echo "Current Branch:   ${{ github.ref_name }}"
+          echo "Commit SHA:       ${{ github.sha }}"
+          echo "Runner OS:        ${{ runner.os }}"
+          echo "========================================="
       
 

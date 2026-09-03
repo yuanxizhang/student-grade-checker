@@ -17,9 +17,21 @@ function getGrade(marks) {
 }
 
 function checkGrade() {
-    const marks = document.getElementById("marks").value;
+    const marksInput = document.getElementById("marks").value;
+    const marks = Number(marksInput);
+
+    if (marksInput.trim() === "") {
+        document.getElementById("result").innerHTML =
+            "Please enter marks between 0 and 100.";
+        return;
+    }
+
     const grade = getGrade(marks);
-    document.getElementById("result").innerHTML = "Your grade is " + grade;
+
+    document.getElementById("result").innerHTML =
+        "Your grade is <span class='font-bold text-indigo-300 text-lg'>" +
+        grade +
+        "</span>";
 }
 
 if (typeof module !== "undefined") {

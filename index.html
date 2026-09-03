@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Grade Calculator</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Optional custom styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="min-h-screen bg-slate-950 text-slate-100">
+    <main class="relative flex min-h-screen items-center justify-center overflow-hidden px-4 py-10">
+
+        <!-- Decorative background -->
+        <div class="absolute inset-0 -z-10">
+            <div class="absolute left-0 top-0 h-80 w-80 rounded-full bg-indigo-600/30 blur-3xl"></div>
+            <div class="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-cyan-500/20 blur-3xl"></div>
+        </div>
+
+        <section class="w-full max-w-md rounded-3xl border border-white/10 bg-slate-900/80 p-7 shadow-2xl shadow-indigo-950/50 backdrop-blur-md sm:p-10">
+            
+            <div class="mb-8 text-center">
+                <p class="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-indigo-300">
+                    Student Result Tool
+                </p>
+
+                <h1 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                    Grade Calculator
+                </h1>
+
+                <p class="mx-auto mt-3 max-w-sm text-sm leading-6 text-slate-400">
+                    Enter your marks out of 100 to calculate your letter grade.
+                </p>
+            </div>
+
+            <div class="space-y-5">
+                <div>
+                    <label for="marks" class="mb-2 block text-sm font-semibold text-slate-200">
+                        Enter marks
+                    </label>
+
+                    <div class="relative">
+                        <input
+                            type="number"
+                            id="marks"
+                            name="marks"
+                            placeholder="For example: 85"
+                            min="0"
+                            max="100"
+                            step="1"
+                            class="w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3.5 pr-20 text-base text-white outline-none placeholder:text-slate-500 transition focus:border-indigo-400 focus:ring-4 focus:ring-indigo-500/20"
+                        >
+
+                        <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-sm font-medium text-slate-400">
+                            / 100
+                        </span>
+                    </div>
+                </div>
+
+                <button
+                    type="button"
+                    onclick="checkGrade()"
+                    class="w-full rounded-xl bg-gradient-to-r from-indigo-500 to-violet-500 px-5 py-3.5 text-sm font-bold text-white shadow-lg shadow-indigo-900/40 transition hover:from-indigo-400 hover:to-violet-400 focus:outline-none focus:ring-4 focus:ring-indigo-500/40 active:scale-[0.98]"
+                >
+                    Calculate Grade
+                </button>
+            </div>
+
+            <!-- Result populated by script.js -->
+            <div
+                id="result"
+                aria-live="polite"
+                class="mt-6 rounded-xl border border-dashed border-slate-700 bg-slate-950/60 px-5 py-5 text-center text-sm font-medium text-slate-400"
+            >
+                Your grade will appear here.
+            </div>
+
+            <div class="mt-8 border-t border-slate-800 pt-6">
+                <h2 class="mb-4 text-sm font-semibold text-slate-200">
+                    Grade scale
+                </h2>
+
+                <div class="grid grid-cols-5 gap-2 text-center text-xs">
+                    <div class="rounded-lg border border-emerald-500/20 bg-emerald-500/10 px-1 py-2">
+                        <span class="block font-bold text-emerald-300">A</span>
+                        <span class="text-slate-400">90–100</span>
+                    </div>
+
+                    <div class="rounded-lg border border-blue-500/20 bg-blue-500/10 px-1 py-2">
+                        <span class="block font-bold text-blue-300">B</span>
+                        <span class="text-slate-400">80–89</span>
+                    </div>
+
+                    <div class="rounded-lg border border-amber-500/20 bg-amber-500/10 px-1 py-2">
+                        <span class="block font-bold text-amber-300">C</span>
+                        <span class="text-slate-400">70–79</span>
+                    </div>
+
+                    <div class="rounded-lg border border-orange-500/20 bg-orange-500/10 px-1 py-2">
+                        <span class="block font-bold text-orange-300">D</span>
+                        <span class="text-slate-400">60–69</span>
+                    </div>
+
+                    <div class="rounded-lg border border-rose-500/20 bg-rose-500/10 px-1 py-2">
+                        <span class="block font-bold text-rose-300">F</span>
+                        <span class="text-slate-400">0–59</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Your existing JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
