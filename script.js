@@ -1,7 +1,9 @@
 function getGrade(marks) {
-    if (marks > 100) {
-        return "Invalid marks";
-    } else if (marks >= 90) {
+    if (marks < 0 || marks > 100 || typeof marks !== 'number') {
+        return 'Invalid marks';
+    }
+   
+    if (marks >= 90) {
         return "A";
     } else if (marks >= 80) {
         return "B";
@@ -9,10 +11,8 @@ function getGrade(marks) {
         return "C";
     } else if (marks >= 60) {
         return "D";
-    } else if (marks >= 0) {
+    } else {
         return "F";
-    } else if (typeof marks !== 'number'|| Number.isNaN(Number(marks)) || marks < 0) {
-        return "Invalid marks";
     }
 }
 
