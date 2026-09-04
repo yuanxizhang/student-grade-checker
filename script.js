@@ -32,14 +32,13 @@ function checkGrade() {
         document.getElementById("result").innerHTML = "<span class='text-red-400'>Please enter a valid number between 0 and 100.</span>";
         return;
     }
+    
     const grade = getGrade(marks);
     const studentName = document.getElementById("studentName").value
-
+    const colorClass = grade === "F" ? "text-red-500" : "text-green-500";
 
     document.getElementById("result").innerHTML =
-        "The grade for " + studentName + " is <span class='font-bold text-indigo-300 text-lg'>" +
-        grade +
-        "</span>";
+        `The grade for ${studentName} is <span class="font-bold text-lg ${colorClass}">${grade}</span>`;
 }
 
 if (typeof module !== "undefined") {
